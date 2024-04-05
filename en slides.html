@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poesía: Melodía de corazones</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta+Malar|Belleza">
+
+    <style>
+        /* General  */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            -ms-scroll-chaining: none;
+            overscroll-behavior: none;
+        }
+
+        body {
+            font-family: 'Mukta Malar', sans-serif;
+            font-size: large;
+            overflow-x: hidden;
+        }
+
+        .text-block {
+            padding: 4rem;
+            margin: 0 10rem;
+        }
+
+        iframe {
+            z-index: 0;
+            border: none;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+
+        /* Scrollama style */
+
+        .scrolly {
+            position: relative;
+            padding: 0.1px;
+        }
+
+        .figure__full {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            z-index: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .figure__semifull {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            left: 20%;
+            height: 100vh;
+            width: 80vw;
+            z-index: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .article__center {
+            position: relative;
+            padding: 0;
+            max-width: 30rem;
+            margin: 0 auto;
+            z-index: 1;
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        .article__left {
+            position: relative;
+            padding: 0;
+            max-width: 30rem;
+            margin: 0 auto;
+            right: 20%;
+            z-index: 1;
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+
+        }
+
+        .step {
+            margin: 40rem auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.25em;
+            border-radius: 10px;
+            box-shadow: rgb(0 0 0 / 20%) 0px 0px 10px;
+            color: black;
+            z-index: 1;
+
+        }
+
+        .titlestep {
+            margin: 40rem auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.25em;
+            border-radius: 40px;
+            box-shadow: rgb(0 0 0 / 20%) 0px 0px 10px;
+            color: black;
+            z-index: 1;
+            text-align: center;
+            font-family: "Belleza", sans-serif;
+            font-size: xx-large;
+            font-style: normal;
+        }
+
+        /* Images */
+        .image__full {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            max-height: 100vh;
+            max-width: 100vw;
+        }
+
+        .image__center {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            max-height: 100vh;
+            max-width: 100vw;
+            padding: 2rem;
+        }
+
+        /* TARJETAS HORIZONTALES */
+        .horizontal-cards {
+            position: relative;
+        }
+
+        .card {
+            position: absolute;
+            left: 100%;
+            bottom: 50%;
+            /* transform: translateX(100%) translateY(-50%); */
+            width: 30%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.25em;
+            border-radius: 10px;
+            box-shadow: rgb(0 0 0 / 20%) 0px 0px 10px;
+            color: black;
+            z-index: 1;
+
+        }
+
+        /* SLIDES HORIZONTALES */
+
+        .horizontal1 {
+            background-image: url('img/sincronia2.png');
+        }
+
+        .horizontal2 {
+            background-image: url('img/discordia2.png');
+        }
+
+        .horizontal3 {
+            background-image: url('img/silencio2.png');
+        }
+
+        .horizontal4 {
+            background-image: url('img/reencuentro2.png');
+        }
+
+        .horizontal5 {
+            background-image: url('img/preguntas2.png');
+        }
+
+        .horizontal6 {
+            background-image: url('img/revelacion2.png');
+        }
+
+        .horizontal-slides {
+            -ms-scroll-chaining: none;
+            overscroll-behavior: none;
+            /* el porcentaje de width debe cambiar de acuerdo a la cantidad (n) de slides: n * 100*/
+            width: 600%;
+            height: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .horizontal-slides .slide {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.5em;
+            text-align: center;
+            color: white;
+            position: relative;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        /* VERTICAL SLIDES */
+        .vertical1 {
+            background-image: url('img/sincronia1.png');
+        }
+
+        .vertical2 {
+            background-image: url('img/discordia1.png');
+        }
+
+        .vertical3 {
+            background-image: url('img/silencio1.png');
+        }
+
+        .vertical4 {
+            background-image: url('img/reencuentro1.png');
+        }
+
+        .vertical5 {
+            background-image: url('img/preguntas1.png');
+        }
+        
+        .vertical6 {
+            background-image: url('img/revelacion1.png');
+        }
+
+        .vertical-slides {
+            position: relative;
+            width: 100%;
+        }
+
+        .vertical-slides .slide {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: "Mukta Malar", sans-serif;
+            font-weight: 600;
+            font-size: 1.5em;
+            text-align: center;
+            color: white;
+            position: relative;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        /* Media queries */
+
+        @media screen and (max-width: 600px) {
+            .figure__full {
+                height: 100vh;
+                width: 100vw;
+            }
+
+            .figure__semifull {
+                height: 100vh;
+                width: 100vw;
+            }
+
+            .article__center {
+                max-width: 20rem;
+                margin: 0 auto;
+            }
+
+            .article__left {
+                max-width: 20rem;
+                margin: 0 auto;
+                right: 0;
+            }
+
+            .step {
+                margin: 40rem auto;
+            }
+
+            .titlestep {
+                margin: 40rem auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        
+        <section class="scrolly text-block">
+            <article>
+                <h1>Bienvenida</h1>
+                <p>Queremos darte la bienvenida a esta sección experimental en el que presentamos una forma diferente de hacer poesía.</p>
+                <p>En este espacio único, los versos no solo se leen, sino que también se experimentan y se sienten con las imágenes y la música que lo acompañan.</p>
+                <p>Te invitamos a descubrir una historia de amor desde dos perspectivas</p>
+                <p>¡Adelante desliza para abajo!</p>
+            </article>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/Titulo.png" class="image__full">
+            </figure>
+            <article class="article__center">
+                <div class="titlestep" data-step="1">
+                    <p>Melodía de Corazones</p>
+                </div>
+            </article>
+        </section>
+        
+        <section class="scrolly text-block">
+            <article>
+                <h1>SINCRONÍA</h1>
+            </article>
+        </section>
+
+        <section class="vertical-slides">
+            <div class="slide vertical1">
+                <p>Yo pienso que tú eres impredecible, no algo misterioso, más bien un universo paralelo ajeno del actual entendimiento. Incomprendido en su totalidad pero lleno de riqueza. Un entramado complejo de sucesos que colisionan y traspasan los muros del tiempo.</p>
+            </div>
+            <div class="slide vertical1">
+                <p>Es que hay tantas estrellas en el cielo y ninguna que ilumine mi horizonte. Soy un errante con cicatrices, un caminante entre soles y lunas, entre valles y desiertos. Camino en una espiral descendente sintiendo el calor de la tierra ardiente bajo mis pies y me hundo en la geografía peculiar de tu mirada. Captas mi atención. En ese momento me entrego a los extraños designios que me prepara el universo cuando sepa tu nombre. Atrapado entre penumbras y luces parpadeantes mis pasos retumban en el vacío de un futuro anticipado a la espera de tu encuentro.</p>
+            </div>
+            <div class="slide vertical1">
+                <p>Tal vez solo soy una víctima de lo que despiertas en mí. Tal vez mis pasos se dirigen a ti. Tal vez no dejo de pensar en mí y solo queda entregarme a ti. Si tan solo supieras lo que siento.</p>
+            </div>
+            <div class="slide vertical1">
+                <p>Hay tanto que pasa en mi cabeza pero tú te mantienes firme en mis pensamientos. Rompes con mis esquemas dejándome sin respuestas. Cada simple acto tuyo me lleva a un nuevo mundo. Si tan solo supieras lo que siento.</p>
+            </div>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/sincronia1.png" class="image__full">
+            </figure>
+            <article class="article__center">
+                <div class="step" data-step="5">
+                    <p><div id='rg_embed_link_3111468' class='rg_embed_link' data-song-id='3111468'>Read <a href='https://genius.com/Melendi-and-haash-destino-o-casualidad-lyrics'>“Destino o Casualidad” by Melendi & Ha*Ash</a> on Genius</div> <script crossorigin src='//genius.com/songs/3111468/embed.js'></script>
+                    </p>
+                    <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2sMxswHr9wX7kTUHULvJBJ?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </p>
+                    <p> <a href="https://youtu.be/D9W4DLjmoOM?si=MHOoe07i8WLrtX34"> Ver en YouTube: Destino o casualidad - Melendi, Ha*Ash </a>
+                    </p>
+                </div>
+            </article>
+        </section>
+
+        <section class="horizontal-slides">
+            <div class="slide horizontal1">
+                <p>Yo siento que te escondes entre tus rodeos y escritos. Pero puedo ver la forma en la que me miras. Puedo sentir como tiemblas cuando me acerco a ti. Tus ojos se escapan de los míos, miran al vacío y esperan que no los encuentre mirando al horizonte. ¿Podrás escaparte si me acerco?</p>
+            </div>
+            <div class="slide horizontal1">
+                <p>Siempre me esperas para hablar. Vamos caminando en noches estrelladas, me das explicaciones y datos innecesarios de los lugares que visitamos que los olvido, porque mientras tú estás navegando entre libros y recuerdos, yo solo te veo con asombro disfrutando la compañía que me das.</p>
+            </div>
+            <div class="slide horizontal1">
+                <p>Eres tan distinto a las personas que conocí. Tu sensibilidad hace que mi fragilidad se exponga. Un miedo que mi corazón entona. Una danza de emociones que tu esencia provoca. Despiertas en mí el anhelo de la libertad porque te convertiste en el espejo de mi alma.</p>
+            </div>
+            <div class="slide horizontal1">
+                <p>Tú has sabido ver a través de mis defectos y de mis equivocaciones que cometo, haciendo que sienta orgullo de quien soy a pesar de mis imperfecciones, haciendo que mis ideas cerradas cambien y eso es tan maravilloso para mí.</p>
+            </div>
+            <div class="slide horizontal1">
+                <p>Pero con esa valentía que me transmites, no sé por qué te escondes en una burbuja y te esfuerzas en adornar las cosas antes que decirlas tal cual son. ¿Acaso soy la causa del mayor de tus temores? Si tan solo sintieras lo que yo siento.</p>
+            </div>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/sincronia2.png" class="image__full">
+            </figure>
+            <article class="article__center">
+                <div class="step" data-step="1">
+                    <p><div id='rg_embed_link_3929702' class='rg_embed_link' data-song-id='3929702'>Read <a href='https://genius.com/Andres-cepeda-por-el-resto-de-mi-vida-lyrics'>“Por el Resto de Mi Vida” by Andrés Cepeda</a> on Genius</div> <script crossorigin src='//genius.com/songs/3929702/embed.js'></script>
+                    </p>
+                    <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0gjhhuqKxswtR1KzYSpSfd?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </p>
+                    <p><a href="https://youtu.be/NoWqnjmh8KU?si=RiAYo_FRWoqo8Gkw"> Ver en YouTube: Por el Resto de Mi Vida - Andrés Cepeda </a>
+                    </p>
+                </div>
+            </article>
+        </section>
+
+        <section class="scrolly text-block">
+            <article>
+                <h1>DISCORDIA</h1>
+            </article>
+        </section>
+
+        <section class="vertical-slides">
+            <div class="slide vertical2">
+                <p></p>
+            </div>
+            <div class="slide vertical2">
+                <p></p>
+            </div>
+            <div class="slide vertical2">
+                <p></p>
+            </div>
+            <div class="slide vertical2">
+                <p></p>
+            </div>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/discordia1.png" class="image__full">
+            </figure>
+            <article class="article__center">
+                <div class="step" data-step="1">
+                    <p> <div id='rg_embed_link_6266636' class='rg_embed_link' data-song-id='6266636'>Read <a href='https://genius.com/Genius-traducciones-al-espanol-taylor-swift-tolerate-it-traduccion-al-espanol-lyrics'>“Taylor Swift - tolerate it (Traducción al Español)” by Genius Traducciones al Español</a> on Genius</div> <script crossorigin src='//genius.com/songs/6266636/embed.js'></script>
+                    </p>
+                    <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0PurA4JVJ8YQgSVopY8fn6?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </p>
+                    <p><a href="https://youtu.be/ukxEKY_7MOc?si=5H922MXrBbRKsRFn"> Ver en YouTube: tolerate it - Taylor Swift </a></p>
+                </div>
+            </article>
+        </section>
+
+        <section class="horizontal-slides">
+            <div class="slide horizontal2">
+                <p></p>
+            </div>
+            <div class="slide horizontal2">
+                <p></p>
+            </div>
+            <div class="slide horizontal2">
+                <p></p>
+            </div>
+            <div class="slide horizontal2">
+                <p></p>
+            </div>
+            <div class="slide horizontal2">
+                <p></p>
+            </div>
+            <div class="slide horizontal2">
+                <p></p>
+            </div>
+        </section>
+        
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/discordia2.png" class="image__full">
+            </figure>
+            <article class="article__center">
+                <div class="step" data-step="1">
+                    <p><div id='rg_embed_link_987750' class='rg_embed_link' data-song-id='987750'>Read <a href='https://genius.com/Belanova-rosa-pastel-lyrics'>“Rosa Pastel” by Belanova</a> on Genius</div> <script crossorigin src='//genius.com/songs/987750/embed.js'></script>
+                    </p>
+                    <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3mU0DbuWtUX5KCaovOQZVK?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
+                    <p><a href="https://youtu.be/wkJxbV1ZlE0?si=UrPp8XknPdsut7GT"> Ver en YouTube: Rosa Pastel - Belanova </a></p>
+                </div>
+            </article>
+        </section>
+
+        <section class="scrolly text-block">
+            <article>
+                <h1>SILENCIO</h1>
+            </article>
+        </section>
+
+        <section class="vertical-slides">
+            <div class="slide vertical3">
+                <p></p>
+            </div>
+            <div class="slide vertical3">
+                <p></p>
+            </div>
+            <div class="slide vertical3">
+                <p></p>
+            </div>
+            <div class="slide vertical3">
+                <p></p>
+            </div>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/silencio1.png" class="image__full">
+            </figure>
+            <article class="article__center">
+                <div class="step" data-step="1">
+                    <p><div id='rg_embed_link_6579852' class='rg_embed_link' data-song-id='6579852'>Read <a href='https://genius.com/Morat-no-hay-mas-que-hablar-lyrics'>“No Hay Más Que Hablar” by Morat</a> on Genius</div> <script crossorigin src='//genius.com/songs/6579852/embed.js'></script></p>
+                    <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0PrD2VArqOuweEzhnpdM89?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
+                    <p><a href="https://youtu.be/vbC8264iid0?si=2XdyALtAMjacjTRF"> Ver en YouTube: No Hay Más Que Hablar - Morat </a></p>
+                </div>
+            </article>
+        </section>
+
+        <section class="horizontal-slides">
+            <div class="slide horizontal3">
+                <p></p>
+            </div>
+            <div class="slide horizontal3">
+                <p></p>
+            </div>
+            <div class="slide horizontal3">
+                <p></p>
+            </div>
+            <div class="slide horizontal3">
+                <p></p>
+            </div>
+            <div class="slide horizontal3">
+                <p></p>
+            </div>
+            <div class="slide horizontal3">
+                <p></p>
+            </div>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/silencio2.png" class="image__full">
+            </figure>
+            <article class="article__center">
+                <div class="step" data-step="5">
+                    <p><div id='rg_embed_link_7765710' class='rg_embed_link' data-song-id='7765710'>Read <a href='https://genius.com/Marc-anthony-yo-le-menti-lyrics'>“Yo Le Mentí” by Marc Anthony</a> on Genius</div> <script crossorigin src='//genius.com/songs/7765710/embed.js'></script>
+                    </p>
+                    <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3YfGttVKDOWNnDVqgYrrsE?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
+                    <p><a href="https://youtu.be/1nKQkNW1xNc?si=Lf1NAjB-Vlx7asU4"> Ver en YouTube: Yo Le Mentí - Marc Anthony </a></p>
+                </div>
+            </article>
+        </section>
+
+        <section class="scrolly text-block">
+            <article>
+                <h1>REENCUENTRO</h1>
+            </article>
+        </section>
+
+        <section class="vertical-slides">
+            <div class="slide vertical4">
+                <p></p>
+            </div>
+            <div class="slide vertical4">
+                <p></p>
+            </div>
+            <div class="slide vertical4">
+                <p></p>
+            </div>
+            <div class="slide vertical4">
+                <p></p>
+            </div>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/reencuentro1.png" class="image__full">
+            </figure>
+            <article class="article__center">
+                <div class="step" data-step="1">
+                    <p><div id='rg_embed_link_9746527' class='rg_embed_link' data-song-id='9746527'>Read <a href='https://genius.com/Genius-traducciones-al-espanol-teddy-swims-lose-control-traduccion-al-espanol-lyrics'>“Teddy Swims - Lose Control (Traducción al Español)” by Genius Traducciones al Español</a> on Genius</div> <script crossorigin src='//genius.com/songs/9746527/embed.js'></script></p>
+                    <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6usohdchdzW9oML7VC4Uhk?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
+                    <p><a href="https://youtu.be/FkOpwodhROI?si=ZYY4BrKZC40z3IgB"> Ver en YouTube: Lose Control - Teddy Swims </a></p>
+                </div>
+            </article>
+        </section>
+
+        <section class="horizontal-slides">
+            <div class="slide horizontal4">
+                <p></p>
+            </div>
+            <div class="slide horizontal4">
+                <p></p>
+            </div>
+            <div class="slide horizontal4">
+                <p></p>
+            </div>
+            <div class="slide horizontal4">
+                <p></p>
+            </div>
+            <div class="slide horizontal4">
+                <p></p>
+            </div>
+            <div class="slide horizontal4">
+                <p></p>
+            </div>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/reencuentro2.png" class="image__full">
+            </figure>
+            <article class="article__center">
+                <div class="step" data-step="1">
+                    <p><div id='rg_embed_link_10000696' class='rg_embed_link' data-song-id='10000696'>Read <a href='https://genius.com/Genius-traducciones-al-espanol-celine-dion-its-all-coming-back-to-me-now-traduccion-al-espanol-lyrics'>“Céline Dion - It’s All Coming Back to Me Now (Traducción al Español)” by Genius Traducciones al Español</a> on Genius</div> <script crossorigin src='//genius.com/songs/10000696/embed.js'></script>
+                    </p>
+                    <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5EQzuYfTZt7B2LqlvTF49l?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
+                    <p><a href="https://youtu.be/j8fHNdrZTSI?si=Ff9lg2RUaQ9hB3Ur"> Ver en YouTube: It’s All Coming Back to Me Now - Céline Dion </a></p>
+                </div>
+            </article>
+        </section>
+
+        <section class="scrolly text-block">
+            <article>
+                <h1>PREGUNTAS</h1>
+            </article>
+        </section>
+
+        <section class="vertical-slides">
+            <div class="slide vertical5">
+                <p></p>
+            </div>
+            <div class="slide vertical5">
+                <p></p>
+            </div>
+            <div class="slide vertical5">
+                <p></p>
+            </div>
+            <div class="slide vertical5">
+                <p></p>
+            </div>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/preguntas1.png" class="image__full">
+            </figure>
+            <article class="article__center">
+                <div class="step" data-step="1">
+                    <p><div id='rg_embed_link_134995' class='rg_embed_link' data-song-id='134995'>Read <a href='https://genius.com/Keane-somewhere-only-we-know-lyrics'>“Somewhere Only We Know” by Keane</a> on Genius</div> <script crossorigin src='//genius.com/songs/134995/embed.js'></script></p>
+                    <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1SKPmfSYaPsETbRHaiA18G?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
+                    <p><a href="https://youtu.be/kx4RTBZFAYU?si=6OUoINx8uwPNC8RJ"> Ver en YouTube: Somewhere Only We Know - Keane </a></p>
+                </div>
+            </article>
+        </section>
+
+        <section class="horizontal-slides">
+            <div class="slide horizontal5">
+                <p></p>
+            </div>
+            <div class="slide horizontal5">
+                <p></p>
+            </div>
+            <div class="slide horizontal5">
+                <p></p>
+            </div>
+            <div class="slide horizontal5">
+                <p></p>
+            </div>
+            <div class="slide horizontal5">
+                <p></p>
+            </div>
+            <div class="slide horizontal5">
+                <p></p>
+            </div>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/preguntas2.png" class="image__full">
+            </figure>
+            <article class="article__center">
+                <div class="step" data-step="1">
+                    <p><div id='rg_embed_link_6431109' class='rg_embed_link' data-song-id='6431109'>Read <a href='https://genius.com/Genius-traducciones-al-espanol-harry-styles-two-ghosts-traduccion-al-espanol-lyrics'>“Harry Styles - Two Ghosts (Traducción al Español)” by Genius Traducciones al Español</a> on Genius</div> <script crossorigin src='//genius.com/songs/6431109/embed.js'></script>
+                    </p>
+                    <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4B1rpPmQXwj78wk6aIGwwU?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
+                    <p><a href="https://youtu.be/iSqLLiuHicw?si=evRys8ljInqZElgh"> Ver en YouTube: Two Ghosts - Harry Styles </a></p>
+                </div>
+            </article>
+        </section>
+
+        <section class="scrolly text-block">
+            <article>
+                <h1>REVELACIÓN</h1>
+            </article>
+        </section>
+
+        <section class="vertical-slides">
+            <div class="slide vertical6">
+                <p></p>
+            </div>
+            <div class="slide vertical6">
+                <p></p>
+            </div>
+            <div class="slide vertical6">
+                <p></p>
+            </div>
+            <div class="slide vertical6">
+                <p></p>
+            </div>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/revelacion1.png" class="image__full">
+            </figure>
+            <article class="article__center">
+                <div class="step" data-step="1">
+                    <p><div id='rg_embed_link_5794575' class='rg_embed_link' data-song-id='5794575'>Read <a href='https://genius.com/Genius-traducciones-al-espanol-taylor-swift-the-1-traduccion-al-espanol-lyrics'>“Taylor Swift - the 1 (Traducción al Español)” by Genius Traducciones al Español</a> on Genius</div> <script crossorigin src='//genius.com/songs/5794575/embed.js'></script></p>
+                    <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0Jlcvv8IykzHaSmj49uNW8?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
+                    <p><a href="https://youtu.be/KsZ6tROaVOQ?si=w3oNY76lU1UZdOxw"> Ver en YouTube: the 1 - Taylor Swift </a></p>
+                </div>
+            </article>
+        </section>
+
+        <section class="horizontal-slides">
+            <div class="slide horizontal6">
+                <p></p>
+            </div>
+            <div class="slide horizontal6">
+                <p></p>
+            </div>
+            <div class="slide horizontal6">
+                <p></p>
+            </div>
+            <div class="slide horizontal6">
+                <p></p>
+            </div>
+            <div class="slide horizontal6">
+                <p></p>
+            </div>
+            <div class="slide horizontal6">
+                <p></p>
+            </div>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/revelacion2.png" class="image__full">
+            </figure>
+            <article class="article__center">
+                <div class="step" data-step="1">
+                    <p><div id='rg_embed_link_2057709' class='rg_embed_link' data-song-id='2057709'>Read <a href='https://genius.com/Genius-traducciones-al-espanol-katy-perry-the-one-that-got-away-traduccion-al-espanol-lyrics'>“Katy Perry - The One That Got Away (Traducción al Español)” by Genius Traducciones al Español</a> on Genius</div> <script crossorigin src='//genius.com/songs/2057709/embed.js'></script>
+                    </p>
+                    <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3oL3XRtkP1WVbMxf7dtTdu?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
+                    <p><a href="https://youtu.be/ePQe5E69INg?si=oH0Aa4_zeboSPigA"> Ver en YouTube: The One That Got Away - Katy Perry  </a></p>
+                </div>
+            </article>
+        </section>
+
+        
+                    
+                </div>
+            </article>
+        </section>
+
+        <section class="scrolly text-block">
+            <article>
+                <h2>Créditos</h2>
+                <h1>Autoría</h1>
+                <p>Javier Alberto Olmos Aguilar, Lab TecnoSocial</p>
+                <h1>Diseño</h1>
+                <p>Javier Alberto Olmos Aguilar, Lab TecnoSocial</p>
+                <p>Abigail Roque Miranda, Lab TecnoSocial</p>
+                <h1>imágenes</h1>
+                <p>DALL-E 3</p>
+                <p>Canva</p>
+                <h1>Edición</h1>
+                <p>Alex Ojeda, Lab TecnoSocial</p>
+                <p>19 de abril de 2024</p>
+            </article>
+        </section>
+
+        ///////////////////////////////////////////////////////////
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/door.png" class="image__full">
+            </figure>
+            <article class="article__center">
+                <div class="step" data-step="1">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                </div>
+                <div class="step" data-step="2">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                </div>
+            </article>
+        </section>
+
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/door.png" class="image__full">
+            </figure>
+            <article class="article__center">
+                <div class="step" data-step="1">
+                    <p>Melodía de Corazones</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/sincronia1.png" class="image__full">
+            </figure>
+            <article class="article__center">
+                <div class="step" data-step="1">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                </div>
+                <div class="step" data-step="2">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__semifull">
+                <img src="img/lake.png" class="image__full">
+            </figure>
+            <article class="article__left">
+                <div class="step" data-step="1">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                </div>
+                <div class="step" data-step="2">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/desert.png" class="image__center">
+            </figure>
+            <article class="article__center">
+                <div class="step" data-step="1">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                </div>
+                <div class="step" data-step="2">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/door.png" class="image__full">
+            </figure>
+            <article class="article__center">
+                <div class="step" data-step="1">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                </div>
+                <div class="step" data-step="2">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="scrolly" data-flourishid="872914">
+            <figure class="figure__semifull">
+                <iframe scrolling="no" src="https://flo.uri.sh/story/872914/embed#slide-0" class="image__full"></iframe>
+            </figure>
+
+            <article class="article__left">
+                <div class="step" data-step="0">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                </div>
+
+                <div class="step" data-step="1">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                </div>
+
+                <div class="step" data-step="2">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                </div>
+            </article>
+
+        </section>
+
+        <section class="scrolly text-block">
+            <article>
+                <h1>Subtitulo</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt provident impedit, expedita quidem
+                    dolorem ducimus accusamus dolore quaerat quasi officia quos porro ex minima repellendus rerum vitae
+                    quisquam vel voluptatem.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt provident impedit, expedita quidem
+                    dolorem ducimus accusamus dolore quaerat quasi officia quos porro ex minima repellendus rerum vitae
+                    quisquam vel voluptatem.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt provident impedit, expedita quidem
+                    dolorem ducimus accusamus dolore quaerat quasi officia quos porro ex minima repellendus rerum vitae
+                    quisquam vel voluptatem.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt provident impedit, expedita quidem
+                    dolorem ducimus accusamus dolore quaerat quasi officia quos porro ex minima repellendus rerum vitae
+                    quisquam vel voluptatem.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt provident impedit, expedita quidem
+                    dolorem ducimus accusamus dolore quaerat quasi officia quos porro ex minima repellendus rerum vitae
+                    quisquam vel voluptatem.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt provident impedit, expedita quidem
+                    dolorem ducimus accusamus dolore quaerat quasi officia quos porro ex minima repellendus rerum vitae
+                    quisquam vel voluptatem.</p>
+            </article>
+        </section>
+
+        <section class="horizontal-cards">
+            <figure class="figure__full">
+                <img src="img/desert.png" class="image__full">
+            </figure>
+            <article class="cards">
+                <div class="card">
+                    <p>A. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    </p>
+                </div>
+                <div class="card">
+                    <p>B. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    </p>
+                </div>
+                <div class="card">
+                    <p>C. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    </p>
+                </div>
+            </article>
+        </section>
+
+        <section class="horizontal-slides">
+            <div class="slide rojo">
+                <h1>Slide 1</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+            </div>
+            <div class="slide naranja">
+                <h1>Slide 2</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+            </div>
+            <div class="slide verde">
+                <h1>Slide 3</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="https://unpkg.com/scrollama"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script>
+        const scroller = scrollama();
+
+        function handleStepEnter(response) {
+            const { element, index, direction } = response;
+            if (element.dataset.step) {
+                const id = element.parentElement.parentElement.dataset.flourishid;
+                const link = `https://flo.uri.sh/story/${id}/embed#slide-`;
+                const slide = element.dataset.step;
+                document.querySelector(`section[data-flourishid="${id}"] iframe`)
+                    .setAttribute('src', link + slide);
+            }
+        }
+
+        function handleStepExit(response) {
+            const { element, index, direction } = response;
+        }
+
+        function init() {
+            scroller
+                .setup({
+                    step: ".step",
+                    offset: 0.5,
+                    debug: false
+                }).onStepEnter(handleStepEnter)
+                .onStepExit(handleStepExit);
+
+            window.addEventListener("resize", scroller.resize);
+        }
+        init();
+
+        // DEFAULTS
+        ScrollTrigger.defaults({
+            markers: false
+        });
+        ScrollTrigger.normalizeScroll(true)
+
+
+        // HORIZONTAL CARDS
+        const tl = gsap.timeline();
+        const cards = gsap.utils.toArray('.horizontal-cards .card');
+
+        cards.forEach((card, index) => {
+            tl.to(card, {
+                left: -500,
+                duration: 1,
+                delay: 0.5,
+                ease: "none"
+            });
+        });
+
+        ScrollTrigger.create({
+            id: "cards",
+            animation: tl,
+            trigger: ".horizontal-cards",
+            start: "50% 50%",
+            end: "+=1000",
+            scrub: true,
+            pin: ".horizontal-cards",
+        });
+
+        // HORIZONTAL SLIDES
+        const slides = gsap.utils.toArray('.horizontal-slides .slide');
+
+        gsap.to(slides, {
+            xPercent: -100 * (slides.length - 1),
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".horizontal-slides",
+                pin: true,
+                scrub: 1,
+                snap: 1 / (slides.length - 1),
+                // base vertical scrolling on how wide the container is so it feels more natural.
+                end: "+=3500",
+            }
+        });
+
+        // VERTICAL SLIDES
+        const slides1 = gsap.utils.toArray(".vertical-slides .slide")
+
+        slides1.forEach((slide, i) => {
+            ScrollTrigger.create({
+                trigger: slide,
+                start: "top top",
+                pin: i === slides.length - 1 ? false : true,
+                pinSpacing: false
+            });
+        });
+        
+    </script>
+</body>
+
+</html>
