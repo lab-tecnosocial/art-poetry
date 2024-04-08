@@ -19,6 +19,7 @@
         html,
         body {
             height: 100%;
+            width: 100%;
             -ms-scroll-chaining: none;
             overscroll-behavior: none;
         }
@@ -209,7 +210,7 @@
             -ms-scroll-chaining: none;
             overscroll-behavior: none;
             /* el porcentaje de width debe cambiar de acuerdo a la cantidad (n) de slides: n * 100*/
-            width: 600%;
+            /* width: 500%; */
             height: 100%;
             display: flex;
             flex-wrap: nowrap;
@@ -1169,55 +1170,78 @@
 
 
         // HORIZONTAL CARDS
-        const tl = gsap.timeline();
-        const cards = gsap.utils.toArray('.horizontal-cards .card');
+        // const tl = gsap.timeline();
+        // const cards = gsap.utils.toArray('.horizontal-cards .card');
 
-        cards.forEach((card, index) => {
-            tl.to(card, {
-                left: -500,
-                duration: 1,
-                delay: 0.5,
-                ease: "none"
-            });
-        });
+        // cards.forEach((card, index) => {
+        //     tl.to(card, {
+        //         left: -500,
+        //         duration: 1,
+        //         delay: 0.5,
+        //         ease: "none"
+        //     });
+        // });
 
-        ScrollTrigger.create({
-            id: "cards",
-            animation: tl,
-            trigger: ".horizontal-cards",
-            start: "50% 50%",
-            end: "+=1000",
-            scrub: true,
-            pin: ".horizontal-cards",
-        });
+        // ScrollTrigger.create({
+        //     id: "cards",
+        //     animation: tl,
+        //     trigger: ".horizontal-cards",
+        //     start: "50% 50%",
+        //     end: "+=1000",
+        //     scrub: true,
+        //     pin: ".horizontal-cards",
+        // });
 
         // HORIZONTAL SLIDES
-        const slides = gsap.utils.toArray('.horizontal-slides .slide');
+        const horizontalSlides = document.querySelectorAll('.horizontal-slides');
 
-        gsap.to(slides, {
-            xPercent: -100 * (slides.length - 1),
-            ease: "none",
-            scrollTrigger: {
-                trigger: ".horizontal-slides",
-                pin: true,
-                scrub: 1,
-                snap: 1 / (slides.length - 1),
-                // base vertical scrolling on how wide the container is so it feels more natural.
-                end: "+=3500",
-            }
-        });
+        horizontalSlides.forEach((section, index) => {
+            const slides = section.querySelectorAll('.slide');
+            const slidesLength = slides.length;
+            section.style.width = `${slidesLength * 100}%`;
 
-        // VERTICAL SLIDES
-        const slides1 = gsap.utils.toArray(".vertical-slides .slide")
-
-        slides1.forEach((slide, i) => {
-            ScrollTrigger.create({
-                trigger: slide,
-                start: "top top",
-                pin: i === slides.length - 1 ? false : true,
-                pinSpacing: false
+            gsap.to(slides, {
+                xPercent: -100 * (slidesLength - 1),
+                ease: "none",
+                scrollTrigger: {
+                    trigger: section,
+                    pin: true,
+                    scrub: 1,
+                    snap: 1 / (slidesLength - 1),
+                    end: "+=3500",
+                }
             });
         });
+
+
+        // VERTICAL SLIDES
+
+        const verticalSlides = document.querySelectorAll('.vertical-slides');
+
+        verticalSlides.forEach((section, index) => {
+            const slides = section.querySelectorAll('.slide');
+            const slidesLength = slides.length;
+
+            slides.forEach((slide, i) => {
+                ScrollTrigger.create({
+                    trigger: slide,
+                    start: "top top",
+                    pin: i === slides.length - 1 ? false : true,
+                    pinSpacing: false
+                });
+            });
+        });
+
+        // const slides1 = gsap.utils.toArray(".vertical-slides .slide")
+
+        // slides1.forEach((slide, i) => {
+        //     ScrollTrigger.create({
+        //         trigger: slide,
+        //         start: "top top",
+        //         pin: i === slides.length - 1 ? false : true,
+        //         pinSpacing: false
+        //     });
+        // });
 
     </script>
 </body>
