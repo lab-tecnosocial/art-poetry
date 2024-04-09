@@ -7,6 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poesía: Melodía de corazones</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta+Malar|Belleza">
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Melodía de corazones">
+    <meta name="description"
+        content="Una forma diferente de poesía. Una historia de amor contada desde las perspectivas de los protagonistas con versos que no solo se leen, sino que también se experimentan y se sienten con las imágenes y la música que lo acompañan.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title"
+        content="Melodía de corazones">
+    <meta property="og:description"
+        content="Una forma diferente de poesía. Una historia de amor contada desde las perspectivas de los protagonistas con versos que no solo se leen, sino que también se experimentan y se sienten con las imágenes y la música que lo acompañan.">
+    <meta property="og:image" content="">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title"
+        content="Melodía de corazones">
+    <meta property="twitter:description"
+        content="Una forma diferente de poesía. Una historia de amor contada desde las perspectivas de los protagonistas con versos que no solo se leen, sino que también se experimentan y se sienten con las imágenes y la música que lo acompañan.">
+    <meta property="twitter:image"
+        content="">
 
     <style>
         /* General  */
@@ -37,7 +58,7 @@
         }
 
         .title {
-            font-family: "Cairo";
+            font-family: "Belleza", sans-serif;
             text-align: center;
             color: #FFF;
             display: flex;
@@ -57,12 +78,14 @@
             -webkit-background-clip: text;
             text-transform: uppercase;
             font-size: 100px;
-            margin: 10px 0;
+            font-family: "Belleza", sans-serif;
+             margin: 10px 0;
+
         }
 
-        iframe {
+        .spotify {
             z-index: 0;
-            border: none;
+            width: 100%;
         }
 
         p {
@@ -71,10 +94,108 @@
             padding-right: 100px;
         }
 
-        mark {
-            background-color: white;
-            color: black;
-            opacity: 0.4;
+        /* resaltado */
+
+        markv {
+            background-color: #edebe7;
+            color: #1c211f;
+            opacity: 0.7;
+        }
+
+        markh {
+            background-color: #1c211f;
+            color: #edebe7;
+            opacity: 0.8;
+        }
+
+        /* Intro & Outro */
+
+        #intro {
+            padding: 2rem;
+            text-align: center;
+            font-size: 25px;
+            color: #edebe7;
+            background-color: #1c211f;
+        }
+        
+        #outro {
+            padding: 2rem;
+            text-align: center;
+            font-size: 16px;
+            color: #edebe7;
+            background-color: #1c211f;
+        }
+
+        /* Subtitulos */
+
+        .sincronia {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: left;
+            text-align: center;
+            height: 100%;
+            letter-spacing: 1px;
+            line-height: 2;
+            padding-top: 20%;
+            padding-bottom: 20%;
+            background-color: #edebe7;
+        }
+
+        .discordia {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: left;
+            text-align: center;
+            height: 100%;
+            letter-spacing: 1px;
+            line-height: 2;
+            padding-top: 20%;
+            padding-bottom: 20%;
+            background-color: #dad0aa;
+        }
+
+        .silencio {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: left;
+            text-align: center;
+            height: 100%;
+            letter-spacing: 1px;
+            line-height: 2;
+            padding-top: 20%;
+            padding-bottom: 20%;
+            background-color: #c7cac4;
+        }
+
+        .reencuentro {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: left;
+            text-align: center;
+            height: 100%;
+            letter-spacing: 1px;
+            line-height: 2;
+            padding-top: 20%;
+            padding-bottom: 20%;
+            background-color: #a5a396;
+        }
+
+        .revelacion {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: left;
+            text-align: center;
+            height: 100%;
+            letter-spacing: 1px;
+            line-height: 2;
+            padding-top: 20%;
+            padding-bottom: 20%;
+            background-color: #635b3a;
         }
 
         /* Scrollama style */
@@ -98,52 +219,27 @@
             overflow: hidden;
         }
 
-        .figure__semifull {
-            position: -webkit-sticky;
-            position: sticky;
-            top: 0;
-            left: 20%;
-            height: 100vh;
-            width: 80vw;
-            z-index: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
         .article__center {
             position: relative;
             padding: 0;
-            max-width: 30rem;
+            max-width: 40rem;
             margin: 0 auto;
             z-index: 1;
             -webkit-transform: translate3d(0, 0, 0);
             -moz-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
-        }
-
-        .article__left {
-            position: relative;
-            padding: 0;
-            max-width: 30rem;
-            margin: 0 auto;
-            right: 20%;
-            z-index: 1;
-            -webkit-transform: translate3d(0, 0, 0);
-            -moz-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-
+            
         }
 
         .step {
             margin: 40rem auto;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.5);
             padding: 1.25em;
             border-radius: 10px;
             box-shadow: rgb(0 0 0 / 20%) 0px 0px 10px;
             color: black;
             z-index: 1;
+            text-align: center;
 
         }
 
@@ -159,6 +255,12 @@
             font-family: "Belleza", sans-serif;
             font-size: xx-large;
             font-style: normal;
+        }
+
+        .yt_link {
+            font-weight: bold;
+            text-decoration: none;
+            font-family: "Mukta Malar", sans-serif; 
         }
 
         /* Images */
@@ -287,20 +389,9 @@
                 width: 100vw;
             }
 
-            .figure__semifull {
-                height: 100vh;
-                width: 100vw;
-            }
-
             .article__center {
                 max-width: 20rem;
                 margin: 0 auto;
-            }
-
-            .article__left {
-                max-width: 20rem;
-                margin: 0 auto;
-                right: 0;
             }
 
             .step {
@@ -317,30 +408,34 @@
 <body>
     <main>
 
-        <section class="scrolly text-block">
-            <article>
-                <h1>Bienvenida</h1>
-                <p>Queremos darte la bienvenida a esta sección experimental en el que presentamos una forma diferente de
-                    hacer poesía.</p>
-                <p>En este espacio único, los versos no solo se leen, sino que también se experimentan y se sienten con
-                    las imágenes y la música que lo acompañan.</p>
-                <p>Te invitamos a descubrir una historia de amor desde dos perspectivas</p>
+        <section id="intro">
+            <div>
+
+                <h2>Antes de leer</h2>
+                <br>
+
+                <p>Queremos darte la bienvenida a esta sección experimental en el que presentamos una forma diferente de hacer poesía.</p>
+                <p>Te invitamos a descubrir una historia de amor contada desde las perspectivas de los protagonistas. Una perspectiva se presenta de forma vertical y la otra en forma horizontal</p>
+                <p>En este espacio único, los versos no solo se leen, sino que también se experimentan y se sienten con las imágenes y la música que lo acompañan. Como un complemento o un esclarecimiento de lo que sienten los protagonistas.</p>
                 <p>¡Adelante desliza para abajo!</p>
-            </article>
+                <br>
+            </div>
         </section>
 
         <section class="scrolly">
             <figure class="figure__full">
                 <img src="image/Titulo.png" class="image__full">
             </figure>
-            <article class="article__center">
+            <article class="title">
                 <div class="titlestep" data-step="1">
-                    <h4>Melodía de Corazones</h4>
+                    <h1>Melodía de Corazones</h1>
                 </div>
             </article>
         </section>
 
-        <section class="scrolly text-block">
+
+
+        <section class="sincronia">
             <article>
                 <h1>SINCRONÍA</h1>
             </article>
@@ -348,29 +443,27 @@
 
         <section class="vertical-slides">
             <div class="slide vertical1">
-                <p> <mark>Yo pienso que tú eres impredecible, no algo misterioso, más bien un universo paralelo ajeno
-                        del actual entendimiento. Incomprendido en su totalidad pero lleno de riqueza. Un entramado
-                        complejo de sucesos que colisionan y traspasan los muros del tiempo.</mark></p>
+                <p> <markv>Yo pienso que tú eres impredecible, no algo misterioso, más bien un universo paralelo ajeno del actual entendimiento. Incomprendido en su totalidad pero lleno de riqueza. Un entramado complejo de sucesos que colisionan y traspasan los muros del tiempo.</markv></p>
             </div>
             <div class="slide vertical1">
-                <p> <mark>Es que hay tantas estrellas en el cielo y ninguna que ilumine mi horizonte. Soy un
+                <p> <markv>Es que hay tantas estrellas en el cielo y ninguna que ilumine mi horizonte. Soy un
                         errante con cicatrices, un caminante entre soles y lunas, entre valles y desiertos. Camino en
                         una espiral descendente sintiendo el calor de la tierra ardiente bajo mis pies y me hundo en la
                         geografía peculiar de tu mirada. Captas mi atención. En ese momento me entrego a los extraños
                         designios que me prepara el universo cuando sepa tu nombre. Atrapado entre penumbras y luces
                         parpadeantes mis pasos retumban en el vacío de un futuro anticipado a la espera de tu
-                        encuentro.</mark></p>
+                        encuentro.</markv></p>
             </div>
             <div class="slide vertical1">
-                <p><mark>Tal vez solo soy una víctima de lo que despiertas en mí. Tal vez mis pasos se dirigen a ti. Tal
+                <p><markv>Tal vez solo soy una víctima de lo que despiertas en mí. Tal vez mis pasos se dirigen a ti. Tal
                         vez no dejo de pensar en mí y solo queda entregarme a ti. Si tan solo supieras
-                        lo que siento.</mark>
+                        lo que siento.</markv>
                 </p>
             </div>
             <div class="slide vertical1">
-                <p> <mark>Hay tanto que pasa en mi cabeza pero tú te mantienes firme en mis pensamientos. Rompes con mis
+                <p> <markv>Hay tanto que pasa en mi cabeza pero tú te mantienes firme en mis pensamientos. Rompes con mis
                         esquemas dejándome sin respuestas. Cada simple acto tuyo me lleva a un nuevo mundo. Si tan solo
-                        supieras lo que siento.</mark></p>
+                        supieras lo que siento.</markv></p>
             </div>
         </section>
 
@@ -379,21 +472,20 @@
                 <img src="image/sincronia1.png" class="image__full">
             </figure>
             <article class="article__center">
-                <div class="step" data-step="5">
+                <div class="step" data-step="1">
                     <p>
                     <div id='rg_embed_link_3111468' class='rg_embed_link' data-song-id='3111468'>Read <a
                             href='https://genius.com/Melendi-and-haash-destino-o-casualidad-lyrics'>“Destino o
                             Casualidad” by Melendi & Ha*Ash</a> on Genius</div>
                     <script crossorigin src='//genius.com/songs/3111468/embed.js'></script>
                     </p>
-                    <p><iframe style="border-radius:12px"
+                    <p><iframe class="spotify" style="border-radius:12px"
                             src="https://open.spotify.com/embed/track/2sMxswHr9wX7kTUHULvJBJ?utm_source=generator"
                             width="100%" height="152" frameBorder="0" allowfullscreen=""
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                             loading="lazy"></iframe>
                     </p>
-                    <p> <a href="https://youtu.be/D9W4DLjmoOM?si=MHOoe07i8WLrtX34"> Ver en YouTube: Destino o casualidad
-                            - Melendi, Ha*Ash </a>
+                    <p> <a class="yt_link" href="https://youtu.be/D9W4DLjmoOM?si=MHOoe07i8WLrtX34"> Ver en YouTube: Destino o casualidad - Melendi, Ha*Ash </a>
                     </p>
                 </div>
             </article>
@@ -401,38 +493,38 @@
 
         <section class="horizontal-slides">
             <div class="slide horizontal1">
-                <p><mark>Yo siento que te escondes entre tus rodeos y escritos. Pero puedo ver la forma en la que me
+                <p><markh>Yo siento que te escondes entre tus rodeos y escritos. Pero puedo ver la forma en la que me
                         miras.
                         Puedo sentir como tiemblas cuando me acerco a ti. Tus ojos se escapan de los míos, miran al
                         vacío y
-                        esperan que no los encuentre mirando al horizonte. ¿Podrás escaparte si me acerco?</mark></p>
+                        esperan que no los encuentre mirando al horizonte. ¿Podrás escaparte si me acerco?</markh></p>
             </div>
             <div class="slide horizontal1">
-                <p><mark>Siempre me esperas para hablar. Vamos caminando en noches estrelladas, me das explicaciones y
+                <p><markh>Siempre me esperas para hablar. Vamos caminando en noches estrelladas, me das explicaciones y
                         datos
                         innecesarios de los lugares que visitamos que los olvido, porque mientras tú estás navegando
                         entre
-                        libros y recuerdos, yo solo te veo con asombro disfrutando la compañía que me das.</mark></p>
+                        libros y recuerdos, yo solo te veo con asombro disfrutando la compañía que me das.</markh></p>
             </div>
             <div class="slide horizontal1">
-                <p><mark>Eres tan distinto a las personas que conocí. Tu sensibilidad hace que mi fragilidad se exponga.
+                <p><markh>Eres tan distinto a las personas que conocí. Tu sensibilidad hace que mi fragilidad se exponga.
                         Un
                         miedo que mi corazón entona. Una danza de emociones que tu esencia provoca. Despiertas en mí el
-                        anhelo de la libertad porque te convertiste en el espejo de mi alma.</mark></p>
+                        anhelo de la libertad porque te convertiste en el espejo de mi alma.</markh></p>
             </div>
             <div class="slide horizontal1">
-                <p><mark>Tú has sabido ver a través de mis defectos y de mis equivocaciones que cometo, haciendo que
+                <p><markh>Tú has sabido ver a través de mis defectos y de mis equivocaciones que cometo, haciendo que
                         sienta
                         orgullo de quien soy a pesar de mis imperfecciones, haciendo que mis ideas cerradas cambien y
                         eso es
-                        tan maravilloso para mí.</mark></p>
+                        tan maravilloso para mí.</markh></p>
             </div>
             <div class="slide horizontal1">
-                <p><mark>Pero con esa valentía que me transmites, no sé por qué te escondes en una burbuja y te
+                <p><markh>Pero con esa valentía que me transmites, no sé por qué te escondes en una burbuja y te
                         esfuerzas en
                         adornar las cosas antes que decirlas tal cual son. ¿Acaso soy la causa del mayor de tus temores?
                         Si
-                        tan solo sintieras lo que yo siento.</mark></p>
+                        tan solo sintieras lo que yo siento.</markh></p>
             </div>
         </section>
 
@@ -454,14 +546,14 @@
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                             loading="lazy"></iframe>
                     </p>
-                    <p><a href="https://youtu.be/NoWqnjmh8KU?si=RiAYo_FRWoqo8Gkw"> Ver en YouTube: Por el Resto de Mi
+                    <p><a class="yt_link" href="https://youtu.be/NoWqnjmh8KU?si=RiAYo_FRWoqo8Gkw"> Ver en YouTube: Por el Resto de Mi
                             Vida - Andrés Cepeda </a>
                     </p>
                 </div>
             </article>
         </section>
 
-        <section class="scrolly text-block">
+        <section class="discordia">
             <article>
                 <h1>DISCORDIA</h1>
             </article>
@@ -469,13 +561,13 @@
 
         <section class="vertical-slides">
             <div class="slide vertical2">
-                <p><mark>"Hay cosas que me encantan
+                <p><markv><i>"Hay cosas que me encantan
                         hacer, son parte mía y si yo no
                         le doy el lugar que merecen,
-                        entonces nadie lo hará"</mark></p>
+                        entonces nadie lo hará"</i></markv></p>
             </div>
             <div class="slide vertical2">
-                <p><mark>Un gélido silencio detiene el
+                <p><markv>Un gélido silencio detiene el
                         tiempo y sangro de dudas
                         buscando respuestas mientras
                         la nieve sepulta lo que algún día
@@ -483,23 +575,23 @@
                         nevando en mi jardín, el frío es
                         la única compañía que tengo y
                         aunque los días parecen no
-                        avanzar aún siento tu palpitar.</mark></p>
+                        avanzar aún siento tu palpitar.</markv></p>
             </div>
             <div class="slide vertical2">
-                <p><mark>Lucho contra tu recuerdo, una
+                <p><markv>Lucho contra tu recuerdo, una
                         batalla sin tregua cuando cierro
                         los ojos y tu imagen sigue
                         fresca como la primavera.
                         Intento mantener la seriedad
                         fingida cuando tu voz me
                         cautiva y me envuelve en su
-                        calor.</mark></p>
+                        calor.</markv></p>
             </div>
             <div class="slide vertical2">
-                <p><mark>¿De qué sirve un amor que es
+                <p><markv>¿De qué sirve un amor que es
                         solo de un lado? ¿Por qué te
                         traigo a mi memoria si tu mirada
-                        ya me ha borrado?</mark></p>
+                        ya me ha borrado?</markv></p>
             </div>
         </section>
 
@@ -522,7 +614,7 @@
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                             loading="lazy"></iframe>
                     </p>
-                    <p><a href="https://youtu.be/ukxEKY_7MOc?si=5H922MXrBbRKsRFn"> Ver en YouTube: tolerate it - Taylor
+                    <p><a class="yt_link" href="https://youtu.be/ukxEKY_7MOc?si=5H922MXrBbRKsRFn"> Ver en YouTube: tolerate it - Taylor
                             Swift </a></p>
                 </div>
             </article>
@@ -530,29 +622,29 @@
 
         <section class="horizontal-slides">
             <div class="slide horizontal2">
-                <p><mark>“No puedo forzar a una
+                <p><markh><i>“No puedo forzar a una
                         persona a hacer algo a lo que
                         aún no está preparada. Para
                         qué seguir en un lugar en el que
-                        sé que nada va a cambiar”</mark></p>
+                        sé que nada va a cambiar”</i></markh></p>
             </div>
             <div class="slide horizontal2">
-                <p><mark>Es que te siento quemando en
+                <p><markh>Es que te siento quemando en
                         mi piel una marca indeleble.
                         Esta pasión que me devora
                         como un fuego sin control que
                         me consume por dentro y me
-                        deja en desconsuelo.</mark></p>
+                        deja en desconsuelo.</markh></p>
             </div>
             <div class="slide horizontal2">
-                <p><mark>Las paredes gritan tu nombre,
+                <p><markh>Las paredes gritan tu nombre,
                         tu recuerdo impregna cada
                         espacio como una tortura
                         invisible, como un agridulce
-                        abrazo.</mark></p>
+                        abrazo.</markh></p>
             </div>
             <div class="slide horizontal2">
-                <p><mark>Ya no puedo soportar lo que
+                <p><markh>Ya no puedo soportar lo que
                         siento, solo quiero ahogarme en
                         las lágrimas, un dulce final, sin
                         dolor ni mal. Lágrimas que
@@ -561,7 +653,7 @@
                         Lágrimas que dejan huella en el
                         suelo que una vez fue nuestro.
                         Que las lágrimas sean la tumba
-                        de tus recuerdos.</mark></p>
+                        de tus recuerdos.</markh></p>
             </div>
 
         </section>
@@ -583,13 +675,13 @@
                             width="100%" height="152" frameBorder="0" allowfullscreen=""
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                             loading="lazy"></iframe></p>
-                    <p><a href="https://youtu.be/wkJxbV1ZlE0?si=UrPp8XknPdsut7GT"> Ver en YouTube: Rosa Pastel -
+                    <p><a class="yt_link" href="https://youtu.be/wkJxbV1ZlE0?si=UrPp8XknPdsut7GT"> Ver en YouTube: Rosa Pastel -
                             Belanova </a></p>
                 </div>
             </article>
         </section>
 
-        <section class="scrolly text-block">
+        <section class="silencio">
             <article>
                 <h1>SILENCIO</h1>
             </article>
@@ -597,7 +689,7 @@
 
         <section class="vertical-slides">
             <div class="slide vertical3">
-                <p><mark>Vivo con el miedo de no ser
+                <p><markv>Vivo con el miedo de no ser
                         suficiente para alguien más. Es
                         una sombra que me persigue,
                         una traba que me atasca. No
@@ -605,17 +697,17 @@
                         no es una carga que se
                         comparta. Camino a ciegas,
                         buscando la luz que me guíe, la
-                        paz que me abrace.</mark></p>
+                        paz que me abrace.</markv></p>
             </div>
             <div class="slide vertical3">
-                <p><mark>Mi corazón es mi brújula, mi
+                <p><markv>Mi corazón es mi brújula, mi
                         única guía en la oscuridad. A
                         cada paso que doy, la
                         incertidumbre se desvanece.
                         Confío en mi instinto, en la
                         fuerza que me habita.
                         Sé que puedo encontrar mi
-                        camino, mi propia salida.</mark></p>
+                        camino, mi propia salida.</markv></p>
             </div>
 
         </section>
@@ -637,7 +729,7 @@
                             width="100%" height="152" frameBorder="0" allowfullscreen=""
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                             loading="lazy"></iframe></p>
-                    <p><a href="https://youtu.be/vbC8264iid0?si=2XdyALtAMjacjTRF"> Ver en YouTube: No Hay Más Que Hablar
+                    <p><a class="yt_link" href="https://youtu.be/vbC8264iid0?si=2XdyALtAMjacjTRF"> Ver en YouTube: No Hay Más Que Hablar
                             - Morat </a></p>
                 </div>
             </article>
@@ -645,7 +737,7 @@
 
         <section class="horizontal-slides">
             <div class="slide horizontal3">
-                <p><mark>No quiero estar encadenada a
+                <p><markh>No quiero estar encadenada a
                         tus recuerdos, llevo meses
                         tratando de sacarte de acá. De
                         una u otra manera dejarás de
@@ -654,17 +746,17 @@
                         refugio. No estoy sola y no te
                         extraño en la música alta y las
                         botellas que desfilan ante mis
-                        ojos.</mark></p>
+                        ojos.</markh></p>
             </div>
             <div class="slide horizontal3">
-                <p><mark>Por favor no aparezcas en los
+                <p><markh>Por favor no aparezcas en los
                         labios de alguien más porque
                         siento que un solo toque tuyo y
                         no te podré olvidar. Déjame
                         bailar en los brazos de alguien
                         más y si pronuncio tu nombre
                         con cada vaso no podré
-                        recordar.</mark></p>
+                        recordar.</markh></p>
             </div>
 
         </section>
@@ -686,13 +778,13 @@
                             width="100%" height="152" frameBorder="0" allowfullscreen=""
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                             loading="lazy"></iframe></p>
-                    <p><a href="https://youtu.be/1nKQkNW1xNc?si=Lf1NAjB-Vlx7asU4"> Ver en YouTube: Yo Le Mentí - Marc
+                    <p><a class="yt_link" href="https://youtu.be/1nKQkNW1xNc?si=Lf1NAjB-Vlx7asU4"> Ver en YouTube: Yo Le Mentí - Marc
                             Anthony </a></p>
                 </div>
             </article>
         </section>
 
-        <section class="scrolly text-block">
+        <section class="reencuentro">
             <article>
                 <h1>REENCUENTRO</h1>
             </article>
@@ -700,16 +792,16 @@
 
         <section class="vertical-slides">
             <div class="slide vertical4">
-                <p><mark>Levanto la mirada al cielo
+                <p><markv>Levanto la mirada al cielo
                         estrellado y me pregunto si
                         mantienes las fotos que nos
                         tomamos ¿Estarás pensando en
                         mí, como yo en ti? ¿Estarás
                         sintiendo lo mismo que yo, en
-                        este frenesí?</mark></p>
+                        este frenesí?</markv></p>
             </div>
             <div class="slide vertical4">
-                <p><mark>Mi memoria miente cuando
+                <p><markv>Mi memoria miente cuando
                         recuerdo las luces, sin las
                         sombras de tu compañía que
                         las reduce. Sin entender la
@@ -719,10 +811,10 @@
                         esperanza que nuestros labios
                         colisionen, en un beso
                         apasionado que las dudas
-                        acallen.</mark>/p>
+                        acallen.</markv>/p>
             </div>
             <div class="slide vertical4">
-                <p><mark>A veces solo quisiera sentir tu
+                <p><markv>A veces solo quisiera sentir tu
                         aroma, quedar atascado en lo
                         que escucho, en tu idioma.
                         Enredarme en tus palabras y
@@ -732,15 +824,15 @@
                         morir en tus brazos que afuera
                         con alguien que me ame de
                         verdad, una paradoja cruel, un
-                        amor que me hace mal.</mark></p>
+                        amor que me hace mal.</markv></p>
             </div>
             <div class="slide vertical4">
-                <p><mark>En tu mirada encuentro la
+                <p><markv>En tu mirada encuentro la
                         calma, un oasis de paz en
                         medio del drama. Pero es hora
                         de enfrentar la realidad,
                         necesito recuperar mi libertad y
-                        dejar de ser un mendigo</mark></p>
+                        dejar de ser un mendigo</markv></p>
             </div>
         </section>
 
@@ -762,7 +854,7 @@
                             width="100%" height="152" frameBorder="0" allowfullscreen=""
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                             loading="lazy"></iframe></p>
-                    <p><a href="https://youtu.be/FkOpwodhROI?si=ZYY4BrKZC40z3IgB"> Ver en YouTube: Lose Control - Teddy
+                    <p><a class="yt_link" href="https://youtu.be/FkOpwodhROI?si=ZYY4BrKZC40z3IgB"> Ver en YouTube: Lose Control - Teddy
                             Swims </a></p>
                 </div>
             </article>
@@ -770,46 +862,46 @@
 
         <section class="horizontal-slides">
             <div class="slide horizontal4">
-                <p><mark>Miro al cielo azul y me pregunto
+                <p><markh>Miro al cielo azul y me pregunto
                         si estarás como yo, en algún
                         rincón proyectando las
                         memorias que compartimos.
                         ¿Estarás pensando en mí, como
                         yo en ti? ¿Estarás sintiendo lo
-                        mismo que yo, en este frenesí?</mark></p>
+                        mismo que yo, en este frenesí?</markh></p>
             </div>
             <div class="slide horizontal4">
-                <p><mark>Quiero que esta tormenta pare,
+                <p><markh>Quiero que esta tormenta pare,
                         que el cielo se abra y el sol se
                         declare. En el carrusel de mis
                         sentimientos, sueño con verte
                         nuevamente, sin lamentos. Y el
                         sueño se me hace realidad, tu
-                        presencia me llena de vitalidad.</mark></p>
+                        presencia me llena de vitalidad.</markh></p>
             </div>
             <div class="slide horizontal4">
-                <p><mark>Ahora mi cuerpo tiembla
+                <p><markh>Ahora mi cuerpo tiembla
                         cuando te aproximas, y por
                         unos instantes, el dolor se
                         minimiza. Mientras te acercas te
                         miro a los ojos, siguen brillando
-                        con el mismo arrojo.</mark></p>
+                        con el mismo arrojo.</markh></p>
             </div>
             <div class="slide horizontal4">
-                <p><mark>Como la primera vez que nos
+                <p><markh>Como la primera vez que nos
                         vimos, una chispa que encendió
                         un fuego que no ha dormido.
                         Tus palabras me llenan de paz,
                         y en tus brazos me siento capaz
                         de olvidar la tristeza de vivir la
-                        vida.</mark></p>
+                        vida.</markh></p>
             </div>
             <div class="slide horizontal4">
-                <p><mark>Pero es momento de despertar
+                <p><markh>Pero es momento de despertar
                         de esta fantasía, seguiré en
                         esta batalla contra tu sombra
                         que me sujeta. Sé que la
-                        victoria se aproxima.</mark></p>
+                        victoria se aproxima.</markh></p>
             </div>
         </section>
 
@@ -831,13 +923,13 @@
                             width="100%" height="152" frameBorder="0" allowfullscreen=""
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                             loading="lazy"></iframe></p>
-                    <p><a href="https://youtu.be/j8fHNdrZTSI?si=Ff9lg2RUaQ9hB3Ur"> Ver en YouTube: It’s All Coming Back
+                    <p><a class="yt_link" href="https://youtu.be/j8fHNdrZTSI?si=Ff9lg2RUaQ9hB3Ur"> Ver en YouTube: It’s All Coming Back
                             to Me Now - Céline Dion </a></p>
                 </div>
             </article>
         </section>
 
-        <section class="scrolly text-block">
+        <section class="preguntas">
             <article>
                 <h1>PREGUNTAS</h1>
             </article>
@@ -845,23 +937,23 @@
 
         <section class="vertical-slides">
             <div class="slide vertical5">
-                <p><mark>Y me pregunto: ¿Por qué pintas
+                <p><markv>Y me pregunto: ¿Por qué pintas
                         de oscuro los recuerdos? ¿Por
                         qué cargas sobre mí los
                         recuerdos del pasado? Si tan
                         solo supieras ver todos los
                         colores de las cosas que
                         pasaron, dejarías de ver las
-                        cosas en blanco y negro.</mark></p>
+                        cosas en blanco y negro.</markv></p>
             </div>
             <div class="slide vertical5">
-                <p><mark>Yo no creía en mí. Y ahora voy
+                <p><markv>Yo no creía en mí. Y ahora voy
                         armando cada pieza de mí
                         como un rompecabezas. Al final
                         me di cuenta que solo me tengo
                         a mi. ¿Por qué cargas con tus
                         miedos? ¿Por qué depositas en
-                        mis hombros tu desilusión?</mark></p>
+                        mis hombros tu desilusión?</markv></p>
             </div>
         </section>
 
@@ -882,7 +974,7 @@
                             width="100%" height="152" frameBorder="0" allowfullscreen=""
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                             loading="lazy"></iframe></p>
-                    <p><a href="https://youtu.be/kx4RTBZFAYU?si=6OUoINx8uwPNC8RJ"> Ver en YouTube: Somewhere Only We
+                    <p><a class="yt_link" href="https://youtu.be/kx4RTBZFAYU?si=6OUoINx8uwPNC8RJ"> Ver en YouTube: Somewhere Only We
                             Know - Keane </a></p>
                 </div>
             </article>
@@ -890,17 +982,17 @@
 
         <section class="horizontal-slides">
             <div class="slide horizontal5">
-                <p><mark>Y me pregunto: ¿Por qué las
+                <p><markh>Y me pregunto: ¿Por qué las
                         cosas tuvieron que ser así? ¿Por
                         qué creí en tus promesas
                         hechizadas? Si ya hace tiempo
                         que no estaba segura de lo que
                         sentía por ti. Me quede a
                         esperar a que hagas algo, no
-                        me dejes ir por favor.</mark></p>
+                        me dejes ir por favor.</markh></p>
             </div>
             <div class="slide horizontal5">
-                <p><mark>Esperas que tenga piedad de ti
+                <p><markh>Esperas que tenga piedad de ti
                         si todo el tiempo que estuve
                         contigo estuviste con miedo. Ya
                         no queda nada de la persona de
@@ -909,11 +1001,11 @@
                         que tenías. ¿Por qué depositas
                         el valor tuyo en mis hombros?
                         ¿Por qué me dejaste con las
-                        cargas que no me pertenecían?</mark></p>
+                        cargas que no me pertenecían?</markh></p>
             </div>
             <div class="slide horizontal5">
-                <p><mark>Me pregunto: ¿Por qué te llevó
-                        tanto tiempo darte cuenta?</mark></p>
+                <p><markh>Me pregunto: ¿Por qué te llevó
+                        tanto tiempo darte cuenta?</markh></p>
             </div>
 
         </section>
@@ -936,13 +1028,13 @@
                             width="100%" height="152" frameBorder="0" allowfullscreen=""
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                             loading="lazy"></iframe></p>
-                    <p><a href="https://youtu.be/iSqLLiuHicw?si=evRys8ljInqZElgh"> Ver en YouTube: Two Ghosts - Harry
+                    <p><a class="yt_link" href="https://youtu.be/iSqLLiuHicw?si=evRys8ljInqZElgh"> Ver en YouTube: Two Ghosts - Harry
                             Styles </a></p>
                 </div>
             </article>
         </section>
 
-        <section class="scrolly text-block">
+        <section class="revelacion">
             <article>
                 <h1>REVELACIÓN</h1>
             </article>
@@ -950,23 +1042,23 @@
 
         <section class="vertical-slides">
             <div class="slide vertical6">
-                <p><mark>Recorro los caminos que me
+                <p><markv>Recorro los caminos que me
                         llevan fuera de casa, perdiendo
                         el control, resistiéndome de
                         verme en un reflejo. Y en la
                         noche oscura me paralizo y
                         entiendo, que en esta batalla
-                        me fui perdiendo.</mark></p>
+                        me fui perdiendo.</markv></p>
             </div>
             <div class="slide vertical6">
-                <p><mark>Ya no necesito esta armadura
+                <p><markv>Ya no necesito esta armadura
                         para saber que fui un guerrero
                         preparado para aguantar. A la
                         luz de la mañana es hora de
                         hacer las paces con las raíces
                         de mi tormento. Y en ese viaje
                         me despojo de mi coraza, que
-                        se las lleve el viento.</mark></p>
+                        se las lleve el viento.</markv></p>
             </div>
             <div class="slide vertical6">
                 <p><mark>Entonces comprendo que te
@@ -978,14 +1070,14 @@
                         valientemente.</mark></p>
             </div>
             <div class="slide vertical6">
-                <p><mark>Escogí el perdón al rencor, una
+                <p><markv>Escogí el perdón al rencor, una
                         decisión difícil, llena de dolor.
                         Descubrí que no puedes ser
                         parte del proceso, y me libero al
-                        fin, con un abrazo honesto.</mark></p>
+                        fin, con un abrazo honesto.</markv></p>
             </div>
             <div class="slide vertical6">
-                <p><mark>Miro mi corazón y con el
+                <p><markv>Miro mi corazón y con el
                         sentimiento dentro, espero
                         tener un poco de amor propio,
                         un fragmento. Encontré un
@@ -996,7 +1088,7 @@
                         tesoro es para mí, para mi
                         crecimiento, para aprender a
                         amarme y ser feliz, sin un
-                        tormento.</mark></p>
+                        tormento.</markv></p>
             </div>
         </section>
 
@@ -1017,7 +1109,7 @@
                             width="100%" height="152" frameBorder="0" allowfullscreen=""
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                             loading="lazy"></iframe></p>
-                    <p><a href="https://youtu.be/KsZ6tROaVOQ?si=w3oNY76lU1UZdOxw"> Ver en YouTube: the 1 - Taylor Swift
+                    <p><a class="yt_link" href="https://youtu.be/KsZ6tROaVOQ?si=w3oNY76lU1UZdOxw"> Ver en YouTube: the 1 - Taylor Swift
                         </a></p>
                 </div>
             </article>
@@ -1025,41 +1117,41 @@
 
         <section class="horizontal-slides">
             <div class="slide horizontal6">
-                <p><mark>Al fin libre de tus cadenas, me
+                <p><markh>Al fin libre de tus cadenas, me
                         libero del yugo que me ataba a
                         tus penas. Ignoras las cosas
                         que hice por amor, los
                         sacrificios que por ti acepté con
-                        fervor.</mark></p>
+                        fervor.</markh></p>
             </div>
             <div class="slide horizontal6">
-                <p><mark>Tal vez la confianza no era lo
+                <p><markh>Tal vez la confianza no era lo
                         ideal, en el fondo siempre lo
                         supe, un final fatal. Te amé, sí,
                         con pasión y entrega, pero
                         ahora te vas, y mi orgullo se
-                        ciega.</mark></p>
+                        ciega.</markh></p>
             </div>
             <div class="slide horizontal6">
-                <p><mark>unque anhelo tu abrazo, mi
+                <p><markh>unque anhelo tu abrazo, mi
                         corazón se defiende, el orgullo
                         es un abrazo. Eterno aprendiz
                         de la vida, te enseñé el amor
                         propio, pero ambos lo
                         ignoramos, hasta que llegó el
-                        frío y el dolor.</mark></p>
+                        frío y el dolor.</markh></p>
             </div>
             <div class="slide horizontal6">
-                <p><mark>No buscaré lo que sientes, no
+                <p><markh>No buscaré lo que sientes, no
                         quiero perderme otra vez en
                         laberintos de dudas y falsas
                         promesas. Te recuerdo en las
                         noches, lucho contra la sombra
                         de tu pasado, para encontrar la
-                        luz y un futuro dorado.</mark></p>
+                        luz y un futuro dorado.</markh></p>
             </div>
             <div class="slide horizontal6">
-                <p><mark>No quería salir esta noche, pero
+                <p><markh>No quería salir esta noche, pero
                         aquí estoy, en los brazos de un
                         extraño, buscando un poco de
                         paz, un fugaz engaño. Me da lo
@@ -1068,15 +1160,15 @@
                         lo afirmo. Pero no correré
                         riesgos, no quiero ser herida,
                         no quiero ser la mujer del
-                        proceso, la que sufre la partida.</mark></p>
+                        proceso, la que sufre la partida.</markh></p>
             </div>
             <div class="slide horizontal6">
-                <p><mark>He aprendido a volar sin tus
+                <p><markh>He aprendido a volar sin tus
                         alas, a encontrar mi camino, sin
                         trampas. Soy libre al fin, de tus
                         cadenas y tu oscuridad, lista
                         para la felicidad, aunque no lo
-                        vea con claridad.</mark></p>
+                        vea con claridad.</markh></p>
             </div>
         </section>
 
@@ -1098,7 +1190,7 @@
                             width="100%" height="152" frameBorder="0" allowfullscreen=""
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                             loading="lazy"></iframe></p>
-                    <p><a href="https://youtu.be/ePQe5E69INg?si=oH0Aa4_zeboSPigA"> Ver en YouTube: The One That Got Away
+                    <p><a class="yt_link" href="https://youtu.be/ePQe5E69INg?si=oH0Aa4_zeboSPigA"> Ver en YouTube: The One That Got Away
                             - Katy Perry </a></p>
                 </div>
             </article>
@@ -1110,22 +1202,34 @@
         </article>
         </section>
 
-        <section class="scrolly text-block">
-            <article>
-                <h2>Créditos</h2>
-                <h1>Autoría</h1>
+        <section id="outro">
+            <div>
+
+                <h1>Créditos</h1>
+                <br>
+
+                <b>Autoría</b>
                 <p>Javier Alberto Olmos Aguilar, Lab TecnoSocial</p>
-                <h1>Diseño</h1>
+                <br>
+                <b>Diseño</b>
                 <p>Javier Alberto Olmos Aguilar, Lab TecnoSocial</p>
                 <p>Abigail Roque Miranda, Lab TecnoSocial</p>
-                <h1>imágenes</h1>
+                <br>
+                <b>Imágenes</b>
                 <p>DALL-E 3</p>
                 <p>Canva</p>
-                <h1>Edición</h1>
+                <br>
+                <b>Edición</b>
                 <p>Alex Ojeda, Lab TecnoSocial</p>
-                <p>19 de abril de 2024</p>
-            </article>
+                <br>
+                <a href="https://labtecnosocial.org/">
+                    <img src="image/" width="150px">
+                </a>
+                <br>
+                <b>19 de abril de 2024</b>
+            </div>
         </section>
+
     </main>
 
     <script src="https://unpkg.com/scrollama"></script>
