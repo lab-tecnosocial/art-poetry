@@ -123,13 +123,19 @@
         /* Intro & Outro */
 
         #intro {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             padding: 3.5rem;
             padding-bottom: 70px;
             text-align: center;
             font-size: 25px;
             color: #edebe7;
             background-image: url('image/intro1.png');
-
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
         }
 
         #outro {
@@ -142,89 +148,47 @@
 
         /* Subtitulos */
 
-        .sincronia {
+        .sincronia,
+        .discordia,
+        .silencio,
+        .reencuentro,
+        .preguntas,
+        .revelacion {
             display: flex;
             flex-direction: column;
-            align-items: left;
-            justify-content: left;
-            text-align: center;
-            height: 100%;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             letter-spacing: 1px;
             line-height: 2;
             padding-top: 20%;
             padding-bottom: 20%;
+        }
+
+        .sincronia {
             background-color: #dbc9b1;
         }
 
         .discordia {
-            display: flex;
-            flex-direction: column;
-            align-items: left;
-            justify-content: left;
-            text-align: center;
-            height: 100%;
-            letter-spacing: 1px;
-            line-height: 2;
-            padding-top: 20%;
-            padding-bottom: 20%;
             background-color: #9AA8B2;
         }
 
         .silencio {
-            display: flex;
-            flex-direction: column;
-            align-items: left;
-            justify-content: left;
-            text-align: center;
-            height: 100%;
-            letter-spacing: 1px;
-            line-height: 2;
-            padding-top: 20%;
-            padding-bottom: 20%;
             background-color: #25283A;
         }
 
         .reencuentro {
-            display: flex;
-            flex-direction: column;
-            align-items: left;
-            justify-content: left;
-            text-align: center;
-            height: 100%;
-            letter-spacing: 1px;
-            line-height: 2;
-            padding-top: 20%;
-            padding-bottom: 20%;
             background-color: #E4E3DA;
         }
 
         .preguntas {
-            display: flex;
-            flex-direction: column;
-            align-items: left;
-            justify-content: left;
-            text-align: center;
-            height: 100%;
-            letter-spacing: 1px;
-            line-height: 2;
-            padding-top: 20%;
-            padding-bottom: 20%;
             background-color: #B4CBD0;
         }
 
         .revelacion {
-            display: flex;
-            flex-direction: column;
-            align-items: left;
-            justify-content: left;
-            text-align: center;
-            height: 100%;
-            letter-spacing: 1px;
-            line-height: 2;
-            padding-top: 20%;
-            padding-bottom: 20%;
             background-color: #d5b690;
         }
+
 
         /*creditos */
         .creditos {
@@ -307,6 +271,16 @@
 
         /* SLIDES HORIZONTALES */
 
+        .horizontal1,
+        .horizontal2,
+        .horizontal3,
+        .horizontal4,
+        .horizontal5,
+        .horizontal6 {
+            background-size: cover;
+            background-position: center;
+        }
+
         .horizontal1 {
             background-image: url('image/sincronia2.png');
         }
@@ -334,8 +308,6 @@
         .horizontal-slides {
             -ms-scroll-chaining: none;
             overscroll-behavior: none;
-            /* el porcentaje de width debe cambiar de acuerdo a la cantidad (n) de slides: n * 100*/
-            /* width: 500%; */
             height: 100%;
             display: flex;
             flex-wrap: nowrap;
@@ -358,6 +330,16 @@
         }
 
         /* VERTICAL SLIDES */
+        .vertical1,
+        .vertical2,
+        .vertical3,
+        .vertical4,
+        .vertical5,
+        .vertical6 {
+            background-size: cover;
+            background-position: center;
+        }
+
         .vertical1 {
             background-image: url('image/sincronia1.png');
         }
@@ -384,6 +366,7 @@
 
         .vertical-slides {
             position: relative;
+            height: 100vh;
             width: 100%;
         }
 
@@ -406,7 +389,7 @@
 
         /* Media queries */
 
-        @media screen and (max-width: 600px) { 
+        @media screen and (max-width: 600px) {
             .figure__full {
                 height: 100vh;
                 width: 100vw;
@@ -633,7 +616,9 @@
             </div>
             <div class="slide vertical2">
                 <p>
-                    <markv>Lucho contra tu recuerdo, una batalla sin tregua cuando cierro los ojos y tu imagen sigue fresca como la primavera. En cada suspiro, tu eco perdura. Mantengo seriedad fingida, mientras tu voz me envuelve y cautiva.</markv>
+                    <markv>Lucho contra tu recuerdo, una batalla sin tregua cuando cierro los ojos y tu imagen sigue
+                        fresca como la primavera. En cada suspiro, tu eco perdura. Mantengo seriedad fingida, mientras
+                        tu voz me envuelve y cautiva.</markv>
                 </p>
             </div>
             <div class="slide vertical2">
@@ -751,7 +736,9 @@
         <section class="vertical-slides">
             <div class="slide vertical3">
                 <p>
-                    <markv>La nostalgia llama la puerta de mi guarida. Labios sellados, paredes pintadas por mis cicatrices. Prisionero, espectador, sigo de pie contemplando el horizonte cambiar ante mis ojos.</markv>
+                    <markv>La nostalgia llama la puerta de mi guarida. Labios sellados, paredes pintadas por mis
+                        cicatrices. Prisionero, espectador, sigo de pie contemplando el horizonte cambiar ante mis ojos.
+                    </markv>
                 </p>
             </div>
             <div class="slide vertical3">
@@ -767,7 +754,8 @@
             </div>
             <div class="slide vertical3">
                 <p>
-                    <markv>Camino a ciegas, buscando luz que me guíe, paz que me abrace en esta noche infinita. Mi corazón es mi brújula en la oscuridad, mi única guía en esta realidad.</markv>
+                    <markv>Camino a ciegas, buscando luz que me guíe, paz que me abrace en esta noche infinita. Mi
+                        corazón es mi brújula en la oscuridad, mi única guía en esta realidad.</markv>
                 </p>
             </div>
 
@@ -800,17 +788,22 @@
         <section class="horizontal-slides">
             <div class="slide horizontal3">
                 <p>
-                    <markh>No quiero estar encadenada a tus recuerdos, luché meses por expulsarte de mí. De algún modo dejarás de doler y encontraré el sendero que perdí. </markh>
+                    <markh>No quiero estar encadenada a tus recuerdos, luché meses por expulsarte de mí. De algún modo
+                        dejarás de doler y encontraré el sendero que perdí. </markh>
                 </p>
             </div>
             <div class="slide horizontal3">
                 <p>
-                    <markh>Las noches de fiesta son mi refugio ansiado. Soledad no encuentro, ni tu falta me ha pesado. Entre la música alta y las botellas que desfilan ante mis ojos, tu ausencia se diluye en cada brindis glorioso.</markh>
+                    <markh>Las noches de fiesta son mi refugio ansiado. Soledad no encuentro, ni tu falta me ha pesado.
+                        Entre la música alta y las botellas que desfilan ante mis ojos, tu ausencia se diluye en cada
+                        brindis glorioso.</markh>
                 </p>
             </div>
             <div class="slide horizontal3">
                 <p>
-                    <markh>Por favor, no aparezcas en los labios de alguien más, pues un roce tuyo y no te podré olvidar. Déjame bailar en brazos prestados y si pronuncio tu nombre entre cada vaso, que se ahogue sin dejar rastro.</markh>
+                    <markh>Por favor, no aparezcas en los labios de alguien más, pues un roce tuyo y no te podré
+                        olvidar. Déjame bailar en brazos prestados y si pronuncio tu nombre entre cada vaso, que se
+                        ahogue sin dejar rastro.</markh>
                 </p>
             </div>
 
@@ -860,21 +853,26 @@
             </div>
             <div class="slide vertical4">
                 <p>
-                    <markv>Mi memoria recuerda las luces sin las sombras de tu compañía. Sin entender la razón de tu cercanía, temiendo que termines de completar mi agonía.</markv>/p>
+                    <markv>Mi memoria recuerda las luces sin las sombras de tu compañía. Sin entender la razón de tu
+                        cercanía, temiendo que termines de completar mi agonía.</markv>/p>
             </div>
             <div class="slide vertical4">
                 <p>
-                    <markv>Aún espero que nuestros labios coincidan en un beso apasionado que calle todas las dudas. A veces quisiera sentir tu aroma, quedar atascado en tu idioma, enredarme en tus palabras y sentirme vivo. Es una pasión que me domina, un sentimiento cautivo.</markv>
+                    <markv>Aún espero que nuestros labios coincidan en un beso apasionado que calle todas las dudas. A
+                        veces quisiera sentir tu aroma, quedar atascado en tu idioma, enredarme en tus palabras y
+                        sentirme vivo. Es una pasión que me domina, un sentimiento cautivo.</markv>
                 </p>
             </div>
             <div class="slide vertical4">
                 <p>
-                    <markv>Preferiría morir en tus brazos que afuera con alguien que me ame de verdad, una paradoja cruel, un amor que me hace mal.</markv>
+                    <markv>Preferiría morir en tus brazos que afuera con alguien que me ame de verdad, una paradoja
+                        cruel, un amor que me hace mal.</markv>
                 </p>
             </div>
             <div class="slide vertical4">
                 <p>
-                    <markv>En tu mirada encuentro la calma, un oasis de paz en medio del drama. Pero es hora de enfrentar la realidad, recuperar mi libertad, dejar de mendigar.</markv>
+                    <markv>En tu mirada encuentro la calma, un oasis de paz en medio del drama. Pero es hora de
+                        enfrentar la realidad, recuperar mi libertad, dejar de mendigar.</markv>
                 </p>
             </div>
         </section>
@@ -993,17 +991,22 @@
         <section class="vertical-slides">
             <div class="slide vertical5">
                 <p>
-                    <markv>Y me pregunto: ¿Por qué pintas de oscuro los recuerdos? ¿Por qué me conviertes en tu enemigo? Si tan solo supieras ver en colores cada momento pasado, dejarías de ver las cosas en blanco y negro.</markv>
+                    <markv>Y me pregunto: ¿Por qué pintas de oscuro los recuerdos? ¿Por qué me conviertes en tu enemigo?
+                        Si tan solo supieras ver en colores cada momento pasado, dejarías de ver las cosas en blanco y
+                        negro.</markv>
                 </p>
             </div>
             <div class="slide vertical5">
                 <p>
-                    <markv>¿Por qué buscar culpables en un delito que ambos cometimos? ¿Por qué cerrar los ojos ante lo que hicimos e ignorar nuestro destino? ¿Habrá espacio para el perdón en este camino?</markv>
+                    <markv>¿Por qué buscar culpables en un delito que ambos cometimos? ¿Por qué cerrar los ojos ante lo
+                        que hicimos e ignorar nuestro destino? ¿Habrá espacio para el perdón en este camino?</markv>
                 </p>
             </div>
             <div class="slide vertical5">
                 <p>
-                    <markv>¿Me creerás si te digo que soy consciente de mis fallas y que navego entre estrellas los vaivenes de mi vida, armando cada pieza de mí como un rompecabezas? Al fin comprendo mi parte, mi valía refleja.</markv>
+                    <markv>¿Me creerás si te digo que soy consciente de mis fallas y que navego entre estrellas los
+                        vaivenes de mi vida, armando cada pieza de mí como un rompecabezas? Al fin comprendo mi parte,
+                        mi valía refleja.</markv>
                 </p>
             </div>
         </section>
@@ -1015,7 +1018,11 @@
             <article class="article__center">
                 <div class="step" data-step="1">
                     <p>
-                        <div id='rg_embed_link_10266127' class='rg_embed_link' data-song-id='10266127'>Read <a href='https://genius.com/Genius-traducciones-al-espanol-keane-somewhere-only-we-know-traduccion-al-espanol-lyrics'>“Keane - Somewhere Only We Know (traducción al español)” by Genius Traducciones al Español</a> on Genius</div> <script crossorigin src='//genius.com/songs/10266127/embed.js'></script>
+                    <div id='rg_embed_link_10266127' class='rg_embed_link' data-song-id='10266127'>Read <a
+                            href='https://genius.com/Genius-traducciones-al-espanol-keane-somewhere-only-we-know-traduccion-al-espanol-lyrics'>“Keane
+                            - Somewhere Only We Know (traducción al español)” by Genius Traducciones al Español</a> on
+                        Genius</div>
+                    <script crossorigin src='//genius.com/songs/10266127/embed.js'></script>
                     </p>
                     <p><iframe style="border-radius:12px"
                             src="https://open.spotify.com/embed/track/1SKPmfSYaPsETbRHaiA18G?utm_source=generator"
@@ -1032,12 +1039,16 @@
         <section class="horizontal-slides">
             <div class="slide horizontal5">
                 <p>
-                    <markh>Y me pregunto: ¿Por qué las cosas tuvieron que ser así? ¿Por qué creí en tus palabras hechizadas de ilusión? Si hace tiempo que no estaba segura de lo que sentía por ti. Me quedé esperando a que hagas algo, “no me dejes ir, por favor”.</markh>
+                    <markh>Y me pregunto: ¿Por qué las cosas tuvieron que ser así? ¿Por qué creí en tus palabras
+                        hechizadas de ilusión? Si hace tiempo que no estaba segura de lo que sentía por ti. Me quedé
+                        esperando a que hagas algo, “no me dejes ir, por favor”.</markh>
                 </p>
             </div>
             <div class="slide horizontal5">
                 <p>
-                    <markh>Esperas que tenga piedad porque en tu noche oscura, fui tu única estrella. Pero solo recuerdo a una persona a quien el miedo gobierna. Ya no eres aquel a quien amaba. ¿Por qué en mí pones tu valor? ¿Por qué me cargas con lo que no debía ser mío?</markh>
+                    <markh>Esperas que tenga piedad porque en tu noche oscura, fui tu única estrella. Pero solo recuerdo
+                        a una persona a quien el miedo gobierna. Ya no eres aquel a quien amaba. ¿Por qué en mí pones tu
+                        valor? ¿Por qué me cargas con lo que no debía ser mío?</markh>
                 </p>
             </div>
             <div class="slide horizontal5">
@@ -1126,12 +1137,15 @@
             </div>
             <div class="slide vertical6">
                 <p>
-                    <markv>Agradezco a mi corazón su valentía, por abrirse a este sentimiento, lo celebro por sentirse merecedor de esto, su presencia es un destello, un regalo en nuestro tiempo.</markv>
+                    <markv>Agradezco a mi corazón su valentía, por abrirse a este sentimiento, lo celebro por sentirse
+                        merecedor de esto, su presencia es un destello, un regalo en nuestro tiempo.</markv>
                 </p>
             </div>
             <div class="slide vertical6">
                 <p>
-                    <markv>Encontré un tesoro mirando hacia adentro, puede que de haberlo encontrado antes no te hubieras ido con un lamento. Pero este tesoro es para mí, para mi crecimiento, para aprender a descubrirme y ser feliz, sin un tormento.</markv>
+                    <markv>Encontré un tesoro mirando hacia adentro, puede que de haberlo encontrado antes no te
+                        hubieras ido con un lamento. Pero este tesoro es para mí, para mi crecimiento, para aprender a
+                        descubrirme y ser feliz, sin un tormento.</markv>
                 </p>
             </div>
         </section>
@@ -1153,7 +1167,8 @@
                             width="100%" height="152" frameBorder="0" allowfullscreen=""
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                             loading="lazy"></iframe></p>
-                    <p><a class="yt_link" href="https://youtu.be/KsZ6tROaVOQ?si=w3oNY76lU1UZdOxw"> Ver en YouTube: the 1 - Taylor Swift
+                    <p><a class="yt_link" href="https://youtu.be/KsZ6tROaVOQ?si=w3oNY76lU1UZdOxw"> Ver en YouTube: the 1
+                            - Taylor Swift
                         </a></p>
                 </div>
             </article>
@@ -1172,27 +1187,36 @@
             </div>
             <div class="slide horizontal6">
                 <p>
-                    <markh>Tal vez la confianza no era ideal, lo supe, un final fatal. Te amé con pasión y entrega, pero ahora te vas, y mi orgullo se ciega.</markh>
+                    <markh>Tal vez la confianza no era ideal, lo supe, un final fatal. Te amé con pasión y entrega, pero
+                        ahora te vas, y mi orgullo se ciega.</markh>
                 </p>
             </div>
             <div class="slide horizontal6">
                 <p>
-                    <markh>Aunque anhelo tu abrazo, mi corazón se defiende, el orgullo no cede en tu mirada que me sorprende. Eternos aprendices de la vida, buscamos dirección, no perdamos el contacto en nuestra última lección.</markh>
+                    <markh>Aunque anhelo tu abrazo, mi corazón se defiende, el orgullo no cede en tu mirada que me
+                        sorprende. Eternos aprendices de la vida, buscamos dirección, no perdamos el contacto en nuestra
+                        última lección.</markh>
                 </p>
             </div>
             <div class="slide horizontal6">
                 <p>
-                    <markh>No buscaré lo que sientes, no quiero perderme otra vez en laberintos de dudas y posibilidades. Cada noche lucho contra la sombra de tu pasado, para hallar luz y un futuro dorado.</markh>
+                    <markh>No buscaré lo que sientes, no quiero perderme otra vez en laberintos de dudas y
+                        posibilidades. Cada noche lucho contra la sombra de tu pasado, para hallar luz y un futuro
+                        dorado.</markh>
                 </p>
             </div>
             <div class="slide horizontal6">
                 <p>
-                    <markh>No quería salir esta noche, pero me hallo en brazos ajenos, buscando un poco de paz, un fugaz consuelo. Me ofrece lo que siempre esperé de ti, tal vez egoísta sea, no lo niego ni lo afirmo. Pero en riesgos no caeré, no quiero ser la víctima del proceso. No seré quien sufre la partida y se queda con una herida en el pecho.</markh>
+                    <markh>No quería salir esta noche, pero me hallo en brazos ajenos, buscando un poco de paz, un fugaz
+                        consuelo. Me ofrece lo que siempre esperé de ti, tal vez egoísta sea, no lo niego ni lo afirmo.
+                        Pero en riesgos no caeré, no quiero ser la víctima del proceso. No seré quien sufre la partida y
+                        se queda con una herida en el pecho.</markh>
                 </p>
             </div>
             <div class="slide horizontal6">
                 <p>
-                    <markh>He aprendido a volar sin tus alas, a encontrar mi camino, sin trampas. Soy libre al fin, de las cadenas y la oscuridad, rumbo a la felicidad, aunque no la vea con claridad.</markh>
+                    <markh>He aprendido a volar sin tus alas, a encontrar mi camino, sin trampas. Soy libre al fin, de
+                        las cadenas y la oscuridad, rumbo a la felicidad, aunque no la vea con claridad.</markh>
                 </p>
             </div>
         </section>
@@ -1215,7 +1239,8 @@
                             width="100%" height="152" frameBorder="0" allowfullscreen=""
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                             loading="lazy"></iframe></p>
-                    <p><a class="yt_link" href="https://youtu.be/ePQe5E69INg?si=oH0Aa4_zeboSPigA"> Ver en YouTube: The One That Got Away - Katy Perry </a></p>
+                    <p><a class="yt_link" href="https://youtu.be/ePQe5E69INg?si=oH0Aa4_zeboSPigA"> Ver en YouTube: The
+                            One That Got Away - Katy Perry </a></p>
                 </div>
             </article>
         </section>
@@ -1237,7 +1262,7 @@
                 <b>Diseño y programación web</b>
                 <p>Javier Alberto Olmos Aguilar, Lab TecnoSocial</p>
                 <p>Abigail Roque Miranda, Lab TecnoSocial</p>
-                
+
                 <b>Imágenes</b>
                 <p>DALL-E 3</p>
                 <p>Canva</p>
@@ -1251,7 +1276,9 @@
                     <img src="image/logo-oscuro.png" width="100px">
                 </a>
                 <br>
-                <b><a class="creditos" href="https://open.spotify.com/prerelease/5JeTM9iqdtLFfSFedipKdD?si=7a409d65a2224ac8">19 de abril de 2024</a></b>
+                <b><a class="creditos"
+                        href="https://open.spotify.com/prerelease/5JeTM9iqdtLFfSFedipKdD?si=7a409d65a2224ac8">19 de
+                        abril de 2024</a></b>
             </div>
         </section>
 
@@ -1297,29 +1324,6 @@
         });
         ScrollTrigger.normalizeScroll(true)
 
-
-        // HORIZONTAL CARDS
-        // const tl = gsap.timeline();
-        // const cards = gsap.utils.toArray('.horizontal-cards .card');
-
-        // cards.forEach((card, index) => {
-        //     tl.to(card, {
-        //         left: -500,
-        //         duration: 1,
-        //         delay: 0.5,
-        //         ease: "none"
-        //     });
-        // });
-
-        // ScrollTrigger.create({
-        //     id: "cards",
-        //     animation: tl,
-        //     trigger: ".horizontal-cards",
-        //     start: "50% 50%",
-        //     end: "+=1000",
-        //     scrub: true,
-        //     pin: ".horizontal-cards",
-        // });
 
         // HORIZONTAL SLIDES
         const horizontalSlides = document.querySelectorAll('.horizontal-slides');
